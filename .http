@@ -1,56 +1,51 @@
 @host=http://localhost:3000
 
-### GET /books
-GET {{host}}/books
+### GET /cars
+GET {{host}}/racecars
 
-### Get existing book
-GET {{host}}/books/3
+### Get existing car
+GET {{host}}/racecars/3
 
-### Get nonexistent book
-GET {{host}}/books/18
+### Get nonexistent car
+GET {{host}}/racecars/60
 
-### Add a new book
-POST {{host}}/books/
+### update a car
+PUT {{host}}/racecars/3
 Content-Type: application/json
 
 {
-  "title": "New Book"
+  "name": "787b",
+  "make": "Mazda"
 }
 
-### Incorrectly a new book
-POST {{host}}/books/
+### Incorrectly a new car
+POST {{host}}/racecars
 Content-Type: application/json
 
 {
-  "titl": "Wrong New Book"
+  "nam": "Wrong New car"
 }
 
-### Update book
-PUT {{host}}/books/3
+### add new car
+POST {{host}}/racecars
 Content-Type: application/json
 
 {
-  "title": "Updated Book"
+  "name": "Updated Car",
+  "make": "updated make"
 }
 
-### Update nonexistent book
-PUT {{host}}/books/18
+### Update nonexistent car
+PUT {{host}}/racecars/69
 Content-Type: application/json
 
 {
-  "title": "Wrong Updated Book"
+  "name": "Wrong Updated Book"
 }
 
-### Incorrectly update book
-PUT {{host}}/books/3
-Content-Type: application/json
 
-{
-  "tile": "Wrong Updated Book"
-}
+### Delete existing car
+DELETE {{host}}/racecars/9
 
-### Delete existing book
-DELETE {{host}}/books/9
-
-### Delete nonexistent book
-DELETE {{host}}/books/18
+### Delete nonexistent car
+DELETE {{host}}/racecars/18
